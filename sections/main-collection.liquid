@@ -1,48 +1,116 @@
-{% if collection.description != blank %}
-  <p>{{ collection.description }}</p>
-{% endif %}
-
-<select id="sort-by">
-  {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
-
-  {% for option in collection.sort_options %}
-    <option
-      value="{{ option.value }}"
-      {% if option.value == sort_by %}
-        selected="selected"
+<div class="bg-white">
+  <div class="relative bg-gray-900">
+    <!-- Decorative image and overlay -->
+    <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
+      {% if collection.image != blank %}
+        <img
+          src="{{ collection.image | image_url }}"
+          loading="eager"
+          width=""
+          height=""
+          alt=""
+          class="h-full w-full object-cover object-center"
+        >
+      {% else %}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0549/1313/8748/files/pullover-hoodie-mockup-of-a-serious-woman-standing-at-the-beach-26829.jpg?v=1656047179"
+          loading="eager"
+          width=""
+          height=""
+          alt=""
+          class="h-full w-full object-cover object-center"
+        >
       {% endif %}
-    >
-      {{ option.name }}
-    </option>
-  {% endfor %}
-</select>
+    </div>
+    <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50"></div>
+
+    <div class="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
+      <h1 class="text-4xl font-bold tracking-tight text-white lg:text-6xl">
+        {{ collection.title }}
+        {% if collection.products_count > 0 %}
+          <span class="text-gray-500 text-sm">({{ collection.products_count }})</span>
+        {% endif %}
+      </h1>
+      <p class="mt-4 text-xl text-white">
+        {% if collection.description != blank %}
+          {{ collection.description }}
+        {% else %}
+          The latest news, articles, and resources, sent to your inbox weekly.
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</div>
 
 {% paginate collection.products by 6 %}
   <div class="bg-white">
-    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <h2 class="sr-only">Products</h2>
+    <div class="mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      {% if collection.products_count == 0 %}
+        <p>There are no products in this collection.</p>
+      {% endif %}
 
-      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+      <select id="sort-by">
+        {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+
+        {% for option in collection.sort_options %}
+          <option
+            value="{{ option.value }}"
+            {% if option.value == sort_by %}
+              selected="selected"
+            {% endif %}
+          >
+            {{ option.name }}
+          </option>
+        {% endfor %}
+      </select>
+
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
         {% for product in collection.products %}
-          <a href="{{ product.url }}" class="group">
-            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+          <a href="#" class="group text-sm">
+            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
               <img
                 src="{{ product.featured_image | image_url }}"
                 width="500"
                 height="500"
                 loading="lazy"
-                alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
-                class="h-full w-full object-cover object-center group-hover:opacity-75"
+                alt="White fabric pouch with white zipper, black zipper pull, and black elastic loop."
+                class="h-full w-full object-cover object-center"
               >
             </div>
-            <h3 class="mt-4 text-sm text-gray-700">{{ product.title }}</h3>
-            <p class="mt-1 text-lg font-medium text-gray-900">{{ product.price | money }}</p>
+            <h3 class="mt-4 font-medium text-gray-900">{{ product.title }}</h3>
+            <p class="italic text-gray-500">
+              {% if product.variants.size > 1 %}
+                {{ product.variants.size }} variants
+              {% else %}
+                {{ product.variants.first.title }}
+              {% endif %}
+            </p>
+            <p class="mt-2 font-medium text-gray-900">
+              {% if product.variants.size > 1 %}
+                From
+              {% endif %}
+              {{ product.price_min | money_with_currency }}
+            </p>
           </a>
         {% endfor %}
+
+        <!-- More products... -->
       </div>
+      {% if collection.all_tags.size > 0 %}
+        <div class="my-2">
+          <h3>Tags</h3>
+          <ul class="flex gap-2">
+            {% for tag in collection.all_tags %}
+              <li class=" bg-slate-300 rounded-xl p-2 text-xs">
+                <a href="{{ collection.url }}/{{ tag | handle }}">{{ tag }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      {{ paginate | default_pagination }}
     </div>
   </div>
-  {{ paginate | default_pagination }}
 {% endpaginate %}
 
 {% javascript %}
