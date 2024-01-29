@@ -40,6 +40,7 @@
         "newsletter_description": "The latest news, articles, and resources, sent to your inbox weekly.",
         "newsletter_placeholder": "Enter your email",
         "newsletter_button": "Subscribe",
+        "gradient_scheme": "bg-gradient-to-r from-cyan-500 to-blue-500",
         "show_social": true,
         "show_facebook": true,
         "show_instagram": true,
