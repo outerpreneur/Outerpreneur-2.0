@@ -8,7 +8,7 @@
         "logo": "shopify:\/\/shop_images\/shopify-partner-dark.webp",
         "logo_size": "96",
         "button": "Get Started",
-        "gradient_scheme": "bg-gradient-to-br from-green-400 to-blue-600",
+        "gradient_scheme": "bg-gradient-to-r from-cyan-500 to-blue-500",
         "button_url": "shopify:\/\/pages\/contact",
         "cta_text": "Setup your Call",
         "cta_url": "shopify:\/\/pages\/contact",
