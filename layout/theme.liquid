@@ -24,15 +24,25 @@
     }
 
 
-  {% assign primary_color = settings.primary_button_color %}
-  {% assign secondary_color = settings.secondary_button_color %}
+  {% assign primary_btn_1 = settings.primary_btn_first_color %}
+  {% assign primary_btn_2 = settings.primary_btn_second_color %}
+  {% assign secondary_btn_1 = settings.secondary_btn_first_color %}
+  {% assign secondary_btn_2 = settings.secondary_btn_second_color %}
 
 
-  .gradient-button {
+  .gradient-button-1 {
       background: linear-gradient(
         to right,
-        {{ primary_color }},
-        {{ secondary_color }}
+        {{ primary_btn_1 }},
+        {{ primary_btn_2 }}
+      );
+    // }
+
+    .gradient-button-2 {
+      background: linear-gradient(
+        to right,
+        {{ secondary_btn_1 }},
+        {{ secondary_btn_2 }}
       );
     // }
 {% endstyle %}
