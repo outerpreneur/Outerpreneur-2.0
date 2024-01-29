@@ -1,4 +1,13 @@
 {
-  "sections": { "main": { "type": "main-cart", "settings": {} } },
-  "order": ["main"]
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/raisham-waheed-WK7mhTOYmWY-unsplash-scaled.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
 }
