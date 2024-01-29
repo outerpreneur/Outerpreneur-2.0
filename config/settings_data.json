@@ -1,1 +1,10 @@
-{"current":{"show_search":true,"favicon":"shopify:\/\/shop_images\/favicon-32x32.png","content_for_index":[]}}
+{
+  "current": {
+    "secondary_button_color": "#3f84f7",
+    "show_search": true,
+    "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
+    "content_for_index": [
+
+    ]
+  }
+}
