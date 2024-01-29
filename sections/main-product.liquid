@@ -119,7 +119,7 @@
 
                 <fieldset class="mt-4">
                   <legend class="sr-only">Choose a size</legend>
-                  <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-10">
+                  <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
                     {% for option in product.options_with_values %}
                       {% if option.name == 'Size' %}
                         {% for value in option.values %}
