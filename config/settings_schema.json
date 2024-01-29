@@ -49,6 +49,18 @@
         "id": "header_text_color",
         "label": "Header text color",
         "default": "#00ffff"
+      },
+      {
+        "type": "color",
+        "id": "primary_button_color",
+        "label": "primary_button_color",
+        "default": "#09b5d6"
+      },
+      {
+        "type": "color",
+        "id": "secondary_button_color",
+        "label": "primary_button_color",
+        "default": "#09b5d6"
       }
     ]
   },
