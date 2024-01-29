@@ -113,10 +113,27 @@
           </a>
         {% endif %}
       </div>
-      <p class="mt-8 text-xs leading-5 text-white md:order-1 md:mt-0">
-        &copy; {{ 'now' | date: '%Y' }}
-        {{ shop.name }}. All rights reserved.
-      </p>
+      {% if section.settings.show_payments %}
+        <div>
+          <ul class="flex gap-2" role="list">
+            {% assign enabled_payment_types = 'visa,master,shopify_pay, apple_pay, google_pay,paypal'
+              | remove: ' '
+              | split: ','
+            %}
+            {% for type in enabled_payment_types %}
+              <li class="list-payment__item">
+                {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {% endif %}
+      {% if section.settings.show_copyright %}
+        <p class="mt-8 text-xs leading-5 text-white md:order-1 md:mt-0">
+          &copy; {{ 'now' | date: '%Y' }}
+          {{ shop.name }}. All rights reserved.
+        </p>
+      {% endif %}
     </div>
   </div>
 </footer>
@@ -276,12 +293,6 @@
     },
     {
       "type": "checkbox",
-      "id": "show_payment",
-      "label": "Show payment",
-      "default": true
-    },
-    {
-      "type": "checkbox",
       "id": "show_language",
       "label": "Show language",
       "default": true
@@ -290,6 +301,12 @@
       "type": "checkbox",
       "id": "show_copyright",
       "label": "Show copyright",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payments",
+      "label": "Show payments",
       "default": true
     }
   ],
