@@ -1,14 +1,19 @@
 <div
   class="py-24 sm:py-32"
-  style="background-image: url({{ section.settings.background_image | image_url }});  background-size: cover; background-position: bottom; background-repeat: no-repeat; "
+  style="background-image: url({{ section.settings.background_image | image_url }});  background-size: cover; background-position: {{ section.settings.position_image }}; background-repeat: no-repeat; "
 >
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
-      <p class="text-base font-semibold leading-7 text-indigo-600">Get the help you need</p>
-      <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Support center</h2>
-      <p class="mt-6 text-lg leading-8 text-gray-600">
-        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat
-        veniam occaecat fugiat aliqua.
+      <p class="text-base font-semibold leading-7 text-white">
+        <a href="#" class="hover:underline">
+          {{ section.settings.subheading }}
+        </a>
+      </p>
+      <h2 class="mt-2 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+        {{ section.settings.heading }}
+      </h2>
+      <p class="mt-6 text-lg leading-8 text-white">
+        {{ section.settings.description }}
       </p>
     </div>
   </div>
@@ -184,6 +189,52 @@
       "type": "image_picker",
       "id": "background_image",
       "label": "Background image"
+    },
+    {
+      "type": "select",
+      "id": "position_image",
+      "label": "Position image",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Cart page"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "This is the cart page"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "This is the cart page"
     }
   ]
 }
