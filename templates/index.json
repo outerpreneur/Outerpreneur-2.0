@@ -312,7 +312,7 @@
         "title": "Ready to dive in?",
         "subtitle": "",
         "button_text": "Get started",
-        "gradient_scheme": "bg-gradient-to-r from-cyan-500 to-blue-500",
+        "gradient_scheme": "bg-gradient-to-tr from-[#9089fc] to-[#ff80b5]",
         "button_url": "",
         "button_text_2": "Learn more",
         "button_url_2": ""
