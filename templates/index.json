@@ -227,7 +227,7 @@
         "title": "We Guide You With Expertise",
         "description": "We work closely with a carefully select suite of e‑commerce technologies, platforms, and specialists; all designed to maximize performance across our Shopify stores.",
         "button_text": "Get Started",
-        "gradient_scheme": "bg-gradient-to-tr from-[#9089fc] to-[#ff80b5]",
+        "gradient_scheme": "bg-gradient-to-r from-cyan-500 to-blue-500",
         "button_url": "",
         "link_text": "Contact us",
         "link_url": "",
@@ -312,7 +312,7 @@
         "title": "Ready to dive in?",
         "subtitle": "",
         "button_text": "Get started",
-        "gradient_scheme": "bg-gradient-to-tr from-[#9089fc] to-[#ff80b5]",
+        "gradient_scheme": "bg-gradient-to-r from-cyan-500 to-blue-500",
         "button_url": "",
         "button_text_2": "Learn more",
         "button_url_2": ""
