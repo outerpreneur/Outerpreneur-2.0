@@ -302,6 +302,18 @@
         "author_handle_5": "Business Manager at August Berg"
       }
     },
+    "cta_section_cyaeUq": {
+      "type": "cta-section",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/raisham-waheed-WK7mhTOYmWY-unsplash-scaled.jpg",
+        "title": "Ready to dive in?",
+        "subtitle": "",
+        "button_text": "Get started",
+        "button_url": "",
+        "button_text_2": "Learn more",
+        "button_url_2": ""
+      }
+    },
     "faq_section_gTe7Fe": {
       "type": "faq-section",
       "blocks": {
@@ -360,18 +372,6 @@
         "title": "Frequently asked questions"
       }
     },
-    "cta_section_cyaeUq": {
-      "type": "cta-section",
-      "settings": {
-        "background_image": "shopify:\/\/shop_images\/raisham-waheed-WK7mhTOYmWY-unsplash-scaled.jpg",
-        "title": "Ready to dive in?",
-        "subtitle": "",
-        "button_text": "Get started",
-        "button_url": "",
-        "button_text_2": "Learn more",
-        "button_url_2": ""
-      }
-    },
     "about_fKpykr": {
       "type": "about",
       "settings": {
@@ -406,8 +406,8 @@
     "partners_section_PqdAAD",
     "timeline_section_3zBLbr",
     "testimonials_7XAY9J",
-    "faq_section_gTe7Fe",
     "cta_section_cyaeUq",
+    "faq_section_gTe7Fe",
     "about_fKpykr"
   ]
 }
