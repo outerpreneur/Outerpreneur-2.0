@@ -51,6 +51,10 @@
         "default": "#00ffff"
       },
       {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
         "type": "color",
         "id": "primary_btn_first_color",
         "label": "Primary button first color",
